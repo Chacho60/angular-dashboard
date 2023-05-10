@@ -1,17 +1,17 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
 
-import { AppRoutingModule } from './app.routing';
-import { NavbarModule } from './shared/navbar/navbar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { SidebarModule } from './sidebar/sidebar.module';
+import { AppRoutingModule } from "./app.routing";
+import { NavbarModule } from "./shared/navbar/navbar.module";
+import { FooterModule } from "./shared/footer/footer.module";
+import { SidebarModule } from "./sidebar/sidebar.module";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 
 @NgModule({
   imports: [
@@ -22,13 +22,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     NavbarModule,
     FooterModule,
     SidebarModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent
-  ],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,22 +4,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Users</h4>
+                        <h4 class="title">Schedules</h4>
                         <p class="category"></p>
                     </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                                        <th *ngFor="let cell of scheduleData.headerRow">{{ cell }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let row of tableData1.dataRows">
+                                    <tr *ngFor="let row of scheduleData.dataRows">
                                         <td *ngFor="let cell of row">{{cell}}</td>
                                         <td>
                                             <button type="button" class="btn btn-info btn-fill">Update</button>
-                                            &nbsp;
                                             <button type="button" class="btn btn-warn btn-fill">Delete</button>
                                         </td>
                                     </tr>
