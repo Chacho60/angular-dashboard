@@ -16,7 +16,12 @@ export class UserComponent implements OnInit {
     this.userService
       .getUser()
       // clone the data object, using its known Config shape
-      .subscribe((data: User) => (this.user = { ...data }));
+      .subscribe((data) => {
+        console.log(data);
+      }); //(
+    //   console.log(data)
+    //   this.user = { ...data }
+    // ));
   }
 
   ngOnInit() {

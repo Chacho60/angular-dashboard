@@ -3,18 +3,21 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { catchError, retry } from "rxjs/operators";
 
-export interface User {
-  name: string;
-  email: string;
+export interface UsersData {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  isCheckedIn: boolean;
 }
+[];
 
 @Injectable()
-export class UserService {
+export class TablesService {
   constructor(private http: HttpClient) {}
 
   userUrl = "http://localhost:8081/users";
 
-  getUser() {
-    return this.http.get<User>(this.userUrl);
+  getUsers() {
+    return this.http.get<UsersData>(this.userUrl);
   }
 }

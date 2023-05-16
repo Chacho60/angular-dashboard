@@ -32,7 +32,7 @@ export class CalendarComponent implements OnInit {
       initialView: "dayGridMonth",
       initialEvents: INITIAL_EVENTS,
       editable: true,
-      events: [{ title: "Meeting", start: new Date() }],
+      events: [],
     });
 
     calendar.render();
