@@ -1,10 +1,10 @@
-import { LbdFreeAngularcliPage } from './app.po';
+import { PdPPage } from './app.po';
 
-describe('lbd-free-angularcli App', function() {
-  let page: LbdFreeAngularcliPage;
+describe('pd-p App', () => {
+  let page: PdPPage;
 
   beforeEach(() => {
-    page = new LbdFreeAngularcliPage();
+    page = new PdPPage();
   });
 
   it('should display message saying app works', () => {

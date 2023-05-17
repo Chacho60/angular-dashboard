@@ -1,5 +1,5 @@
 {
-  "globalDependencies": {
-    "jquery": "registry:dt/jquery#1.10.0+20170123093700"
+  "dependencies": {
+    "chartist": "registry:dt/chartist#0.9.5+20161212190028"
   }
 }

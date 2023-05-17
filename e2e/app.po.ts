@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class LbdFreeAngularcliPage {
+export class PdPPage {
   navigateTo() {
     return browser.get('/');
   }

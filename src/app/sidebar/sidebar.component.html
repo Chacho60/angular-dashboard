@@ -1,78 +1,105 @@
 
-<div class="sidebar-wrapper">
-    <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text">
-            <div class="logo-img">
-                <img src="/assets/img/angular2-logo-white.png"/>
-            </div>
-            ATTENDANCE
-        </a>
-    </div>
-    <ul class="nav responsive-nav">
-        <li *ngIf="isMobileMenu()">
-            <a class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-dashboard"></i>
-				<p class="hidden-lg hidden-md">Dashboard</p>
-            </a>
-        </li>
-        <li class="dropdown" *ngIf="isMobileMenu()">
-              <a class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-globe"></i>
-                    <b class="caret hidden-sm hidden-xs"></b>
-                    <span class="notification hidden-sm hidden-xs">5</span>
-					<p class="hidden-lg hidden-md">
-						5 Notifications
-						<b class="caret"></b>
-					</p>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Notification 1</a></li>
-                <li><a href="#">Notification 2</a></li>
-                <li><a href="#">Notification 3</a></li>
-                <li><a href="#">Notification 4</a></li>
-                <li><a href="#">Another notification</a></li>
-              </ul>
-        </li>
-        <li *ngIf="isMobileMenu()">
-           <a>
-                <i class="fa fa-search"></i>
-				<p class="hidden-lg hidden-md">Search</p>
-            </a>
-        </li>
-        <li *ngIf="isMobileMenu()">
-           <a href="">
-               <p>Account</p>
-            </a>
-        </li>
-        <li class="dropdown" *ngIf="isMobileMenu()">
-              <a class="dropdown-toggle" data-toggle="dropdown">
-                    <p>
-    					Dropdown
-    					<b class="caret"></b>
-    				</p>
+<div class="logo">
+	<a href="http://www.creative-tim.com" class="simple-text logo-mini">
+		<div class="logo-img">
+			<img src="../../assets/img/angular2-logo-white.png"/>
+		</div>
+	</a>
+	<a href="http://www.creative-tim.com" class="simple-text logo-normal">
+		Creative Tim
+	</a>
+</div>
 
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-        </li>
-        <li *ngIf="isMobileMenu()">
-            <a>
-                <p>Log out</p>
-            </a>
-        </li>
-        <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-            <a  [routerLink]="[menuItem.path]">
-                <i class="{{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p>
-            </a>
-        </li>
-    </ul>
+<div class="sidebar-wrapper">
+
+	<div class="user">
+		<div class="info">
+			<div class="photo">
+				<img src="../assets/img/default-avatar.png" />
+			</div>
+			<a data-toggle="collapse" href="#collapseExample" class="collapsed">
+				<span>
+					Tania Andrew
+					<b class="caret"></b>
+				</span>
+			</a>
+			<div class="collapse" id="collapseExample">
+				<ul class="nav">
+					<li>
+						<a href="#">
+							<span class="sidebar-mini">MP</span>
+							<span class="sidebar-normal">My Profile</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sidebar-mini">EP</span>
+							<span class="sidebar-normal">Edit Profile</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="sidebar-mini">S</span>
+							<span class="sidebar-normal">Settings</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="isNotMobileMenu()">
+		<form class="navbar-form navbar-left navbar-search-form" role="search">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input class="form-control" placeholder="Search..." type="text" value="">
+            </div>
+        </form>
+		<ul class="nav nav-mobile-menu">
+            <li class="dropdown dropdown-with-icons">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-list"></i>
+                    <p class="hidden-md hidden-lg">
+                        More
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <ul class="dropdown-menu dropdown-with-icons">
+                    <li>
+                        <a class="text-danger" href="#">
+                            <i class="pe-7s-close-circle"></i>
+                            Log out
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
+                <!--If is a single link-->
+                <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
+                    <i class="{{menuitem.icontype}}"></i>
+                    <p>{{menuitem.title}}</p>
+                </a>
+                <!--If it have a submenu-->
+                <a data-toggle="collapse" href="#{{menuitem.title}}" *ngIf="menuitem.type === 'sub'">
+                    <i class="{{menuitem.icontype}}"></i>
+                    <p>{{menuitem.title}}<b class="caret"></b></p>
+                </a>
+
+                <!--Display the submenu items-->
+                <div id="{{menuitem.title}}" class="collapse" *ngIf="menuitem.type === 'sub'">
+                    <ul class="nav">
+                        <li routerLinkActive="active" *ngFor="let childitem of menuitem.children">
+                            <a [routerLink]="[menuitem.path, childitem.path]">
+                                <span class="sidebar-mini">{{childitem.ab}}</span>
+                                <span class="sidebar-normal">{{childitem.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
 </div>

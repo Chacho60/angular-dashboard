@@ -1,31 +1,35 @@
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; // this is needed!
 import { RouterModule } from "@angular/router";
-
-import { AppRoutingModule } from "./app.routing";
-import { NavbarModule } from "./shared/navbar/navbar.module";
-import { FooterModule } from "./shared/footer/footer.module";
-import { SidebarModule } from "./sidebar/sidebar.module";
-
+import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
-
-import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { SidebarModule } from "./sidebar/sidebar.module";
+import { FixedPluginModule } from "./shared/fixedplugin/fixedplugin.module";
+import { CalendarModule } from "./calendar/calendar.module";
+import { FooterModule } from "./shared/footer/footer.module";
+import { NavbarModule } from "./shared/navbar/navbar.module";
+import { PagesnavbarModule } from "./shared/pagesnavbar/pagesnavbar.module";
+import { AdminLayoutComponent } from "./layouts/admin/admin-layout.component";
+import { AuthLayoutComponent } from "./layouts/auth/auth-layout.component";
+import { AppRoutes } from "./app.routing";
+import { CalendarService } from "./calendar/calendar.service";
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    CalendarModule,
     FormsModule,
-    RouterModule,
-    HttpClientModule,
+    RouterModule.forRoot(AppRoutes, {
+      useHash: true,
+    }),
+    SidebarModule,
     NavbarModule,
     FooterModule,
-    SidebarModule,
-    AppRoutingModule,
+    FixedPluginModule,
+    PagesnavbarModule,
   ],
-  declarations: [AppComponent, AdminLayoutComponent],
-  providers: [],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
   bootstrap: [AppComponent],
+  providers: [CalendarService],
 })
 export class AppModule {}

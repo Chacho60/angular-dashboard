@@ -1,60 +1,57 @@
-## [1.9.0] - 2022-11-28
+## [1.7.0] - 2022-12-27
 ### Updates
 - update to Angular 14
-- update all dependencies to match the Angular 14 version
+- update all dependencies to match Angular 14 version
 
-## [1.8.0] - 2022-05-06
+## [1.6.0] - 2022-04-21
 ### Updates
 - update to Angular 13
-- update all dependencies to match the Angular 13 version
-- routing, build and configuration issues fixed
+- update all dependencies to match Angular 13 version
+- full calendar implementation changed to ES6 build system
+- lazy loading module routing implementation
+- build issue fixed
 
-## [1.7.0] - 2020-12-15
+## [1.5.0] - 2020-12-16
 ### Updates
 - update to Angular 11
 - update all dependencies to match Angular 11 version
 
-## [1.6.0] - 2020-03-12
+## [1.4.1] 2020-03-05
+### Update
+- Remove .git, .gitignore, .editorconfig files
+
+## [1.4.0] - 2020-02-27
 ### Updates
 - update to Angular 9
 - update all dependencies to match Angular 9 version
 
-## [1.5.0] - 2018-10-04
-### Changes
-- update to Angular 6
-- added online documentation
+## [1.3.0] 2018-09-06
+### Fixes
+- update Angular to 6.1.6
+- fixed modal on responsive
+- fixed scss problem with nghost
+- changed the tags style
 
-## [1.4.0] - 2017-08-28
-### Changes for Angular 4
-- added angular-cli
-- update to Angular 4
+## [1.2.1] 2017-09-21
+- Update Angular to 4.3.1
+- Update @angular/cli to 1.4.2
+- fixed nouislider bug
+- autocompile sass
 
-## [v1.3.0] 2017-08-28
-### skipped for sync with Angular 4 version convention
+## [1.2.0] 2017-07-28
+- Update to Angular CLI structure
+- Update to Angular v4.x.x
+- Added Angular Modules for:
+   - Switches
+   - Maps
+   - Tags
+   - Sliders  
 
-## [v1.2.0] 2017-08-28
-### skipped for sync with Angular 4 version convention
+## [1.0.1] 2017-03-21
+- Added "@types/core-js": "0.9.35" in package.json
 
-## [1.1.1] - 2017-03-21
-### Added
-- added "@types/core-js": "0.9.35" in package
+## [1.0.0] 2017-03-01
+- Added Sketch Files
 
-## [1.1.0] - 2017-03-01
-### Added
-- fix version numbers in package.json and CSS and JS
-
-## [1.0.2] - 2017-02-27
-### Added
-- added upgrade to pro page
-- fixed navbar title
-- changed http://www.creative-tim.com/ with https://www.creative-tim.com/
-
-## [1.0.1] - 2017-02-13
-### small fix
-- changes in routes(redirect '' to 'dashboard' + added HashLocationStrategy)
-- changes in documentation
-- changes in sidebar(cleaned li tags + changed z-index)
-- changes in footer(added current date)
-
-## [1.0.0] - 2016-12-14
-### initial Release
+## [1.0.0] 2017-02-22
+- Initial Release

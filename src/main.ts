@@ -1,18 +1,19 @@
 /*!
 
- =========================================================
- * Light Bootstrap Dashboard Angular - v1.9.0
- =========================================================
+=========================================================
+* Light Bootstrap Dashboard Pro Angular - v1.7.0
+=========================================================
 
- * Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-angular2
- * Copyright 2020 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT
+* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-pro-angular2
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
 
- =========================================================
+* Coded by Creative Tim
 
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+=========================================================
 
- */
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

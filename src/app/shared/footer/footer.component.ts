@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
-declare var $:any;
-
 @Component({
+    moduleId: module.id,
     selector: 'footer-cmp',
     templateUrl: 'footer.component.html'
 })
